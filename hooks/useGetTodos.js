@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setTodosReducer } from '../redux/todosSlice';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
 
 export const useGetTodos = () => {

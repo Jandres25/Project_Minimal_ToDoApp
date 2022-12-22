@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, Switch, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import DateTimePikcer from '@react-native-community/datetimepicker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodoReducer } from '../redux/todosSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -24,7 +24,7 @@ export default function AddTodo() {
             text: name,
             hour: isToday ? date.toISOString() : new Date(date).getTime() + 24 * 60 * 60 * 1000,
             isToday: isToday,
-            isComplited: false,
+            isCompleted: false,
         }
         try {
             await AsyncStorage.setItem("Todos", JSON.stringify([...listTodos, newTodo]));
@@ -60,7 +60,7 @@ export default function AddTodo() {
             });
             console.log('Notification was scheduled');
         } catch (e) {
-            alert('The notification failed to schecule, make sure the hour is valid.')
+            alert('The notification failed to schedule, make sure the hour is valid.')
         }
     };
 
@@ -80,7 +80,7 @@ export default function AddTodo() {
                 <View style={styles.inputContainer}>
                     <Text style={styles.inputTitle}>Hour</Text>
                     {timePicker && (
-                        <DateTimePikcer
+                        <DateTimePicker
                         value={date}
                         mode={'time'}
                         is24Hour={false}

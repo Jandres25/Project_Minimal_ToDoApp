@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const initialState = {
     todos: [],
@@ -16,7 +15,7 @@ export const todosSlice = createSlice({
         addTodoReducer:(state, action) => {
             state.todos.push(action.payload);
         },
-        hideComplitedReducer:(state) => {
+        hideCompletedReducer:(state) => {
             state.todos = state.todos.filter(todo => !todo.isCompleted);
         },
         updateTodoReducer: (state, action) => {
@@ -39,7 +38,7 @@ export const {
     setTodosReducer,
     addTodoReducer,
     updateTodoReducer,
-    hideComplitedReducer,
+    hideCompletedReducer,
     deleteTodoReducer
 } = todosSlice.actions;
 export default todosSlice.reducer;

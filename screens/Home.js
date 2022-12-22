@@ -5,7 +5,7 @@ import { useGetTodos } from '../hooks/useGetTodos';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { hideComplitedReducer, setTodosReducer } from '../redux/todosSlice';
+import { hideCompletedReducer, setTodosReducer } from '../redux/todosSlice';
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import moment from 'moment';
@@ -54,7 +54,7 @@ export default function Home() {
             return;
         }
         setIsHidden(!isHidden);
-        dispatch(hideComplitedReducer());
+        dispatch(hideCompletedReducer());
         // setLocalData(localData.filter(item => item.isCompleted === false));
     }
 

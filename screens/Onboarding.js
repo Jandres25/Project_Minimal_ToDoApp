@@ -35,9 +35,6 @@ export default function Onboarding() {
     )
 }
 
-const iphoneHeight = Dimensions.get('window').height;
-console.log(iphoneHeight);
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -48,7 +45,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 32,
         fontWeight: 'bold',
-        marginBottom: iphoneHeight > 800 ? 70 : 50,
         marginTop: 100,
     },
     subTitle: {
@@ -84,6 +80,5 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         marginTop: 100,
         position: 'absolute',
-        bottom: iphoneHeight > 800 ? 90 : 30,
     }
 }); 
